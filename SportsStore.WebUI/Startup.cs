@@ -8,7 +8,6 @@ namespace SportsStore.WebUI
     {
         public void Configuration(IAppBuilder app)
         {
-            ConfigureAuth(app);
         }
     }
 }

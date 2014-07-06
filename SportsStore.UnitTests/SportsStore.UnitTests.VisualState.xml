@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
-<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="false">
+<VisualState xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ShowCheckBoxes="true">
   <TopNode>[0-1000]C:\projects\SportsStore\SportsStore.UnitTests\SportsStore.UnitTests.nunit</TopNode>
-  <SelectedNode>[0-1002]SportsStore.UnitTests.ProductControllerTests.CanPaginate</SelectedNode>
+  <SelectedNode>[0-1004]SportsStore.UnitTests.ProductControllerTests.CanPaginate</SelectedNode>
   <ExcludeCategories>false</ExcludeCategories>
   <Nodes>
     <Node UniqueName="[0-1000]C:\projects\SportsStore\SportsStore.UnitTests\SportsStore.UnitTests.nunit" Expanded="true" />
-    <Node UniqueName="[0-1003]C:\projects\SportsStore\SportsStore.UnitTests\bin\Debug\SportsStore.UnitTests.dll" Expanded="true" />
-    <Node UniqueName="[0-1004]SportsStore" Expanded="true" />
-    <Node UniqueName="[0-1005]SportsStore.UnitTests" Expanded="true" />
-    <Node UniqueName="[0-1001]SportsStore.UnitTests.ProductControllerTests" Expanded="true" />
+    <Node UniqueName="[0-1005]C:\projects\SportsStore\SportsStore.UnitTests\bin\Debug\SportsStore.UnitTests.dll" Expanded="true" />
+    <Node UniqueName="[0-1006]SportsStore" Expanded="true" />
+    <Node UniqueName="[0-1007]SportsStore.UnitTests" Expanded="true" />
+    <Node UniqueName="[0-1008]SportsStore.UnitTests.HtmlHelpers" Expanded="true" />
+    <Node UniqueName="[0-1001]SportsStore.UnitTests.HtmlHelpers.PagingHelpersTests" Expanded="true" />
+    <Node UniqueName="[0-1003]SportsStore.UnitTests.ProductControllerTests" Expanded="true" />
   </Nodes>
 </VisualState>

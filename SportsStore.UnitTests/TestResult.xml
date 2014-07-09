@@ -1,28 +1,33 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
 <!--This file represents the results of running a test suite-->
-<test-results name="C:\projects\SportsStore\SportsStore.UnitTests\SportsStore.UnitTests.nunit" total="2" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2014-07-08" time="19:43:54">
+<test-results name="C:\projects\SportsStore\SportsStore.UnitTests\SportsStore.UnitTests.nunit" total="3" errors="0" failures="0" not-run="0" inconclusive="0" ignored="0" skipped="0" invalid="0" date="2014-07-08" time="22:28:10">
   <environment nunit-version="2.6.3.13283" clr-version="2.0.50727.6413" os-version="Microsoft Windows NT 6.2.9200.0" platform="Win32NT" cwd="C:\Program Files (x86)\NUnit 2.6.3\bin" machine-name="BURKE-DELL" user="Matt" user-domain="BURKE-DELL" />
   <culture-info current-culture="en-US" current-uiculture="en-US" />
-  <test-suite type="Project" name="C:\projects\SportsStore\SportsStore.UnitTests\SportsStore.UnitTests.nunit" executed="True" result="Success" success="True" time="3.568" asserts="0">
+  <test-suite type="Project" name="C:\projects\SportsStore\SportsStore.UnitTests\SportsStore.UnitTests.nunit" executed="True" result="Success" success="True" time="1.602" asserts="0">
     <results>
-      <test-suite type="Assembly" name="C:\projects\SportsStore\SportsStore.UnitTests\bin\Debug\SportsStore.UnitTests.dll" executed="True" result="Success" success="True" time="3.500" asserts="0">
+      <test-suite type="Assembly" name="C:\projects\SportsStore\SportsStore.UnitTests\bin\Debug\SportsStore.UnitTests.dll" executed="True" result="Success" success="True" time="1.572" asserts="0">
         <results>
-          <test-suite type="Namespace" name="SportsStore" executed="True" result="Success" success="True" time="3.393" asserts="0">
+          <test-suite type="Namespace" name="SportsStore" executed="True" result="Success" success="True" time="1.572" asserts="0">
             <results>
-              <test-suite type="Namespace" name="UnitTests" executed="True" result="Success" success="True" time="3.387" asserts="0">
+              <test-suite type="Namespace" name="UnitTests" executed="True" result="Success" success="True" time="1.571" asserts="0">
                 <results>
-                  <test-suite type="Namespace" name="HtmlHelpers" executed="True" result="Success" success="True" time="1.113" asserts="0">
+                  <test-suite type="Namespace" name="Controllers" executed="True" result="Success" success="True" time="1.442" asserts="0">
                     <results>
-                      <test-suite type="TestFixture" name="PagingHelpersTests" executed="True" result="Success" success="True" time="1.108" asserts="0">
+                      <test-suite type="TestFixture" name="ProductControllerTests" executed="True" result="Success" success="True" time="1.437" asserts="0">
                         <results>
-                          <test-case name="SportsStore.UnitTests.HtmlHelpers.PagingHelpersTests.CanGeneratePageLinks" executed="True" result="Success" success="True" time="1.060" asserts="1" />
+                          <test-case name="SportsStore.UnitTests.Controllers.ProductControllerTests.CanFilterProducts" executed="True" result="Success" success="True" time="1.397" asserts="5" />
+                          <test-case name="SportsStore.UnitTests.Controllers.ProductControllerTests.CanPaginate" executed="True" result="Success" success="True" time="0.012" asserts="7" />
                         </results>
                       </test-suite>
                     </results>
                   </test-suite>
-                  <test-suite type="TestFixture" name="ProductControllerTests" executed="True" result="Success" success="True" time="2.264" asserts="0">
+                  <test-suite type="Namespace" name="HtmlHelpers" executed="True" result="Success" success="True" time="0.123" asserts="0">
                     <results>
-                      <test-case name="SportsStore.UnitTests.ProductControllerTests.CanPaginate" executed="True" result="Success" success="True" time="2.245" asserts="7" />
+                      <test-suite type="TestFixture" name="PagingHelpersTests" executed="True" result="Success" success="True" time="0.122" asserts="0">
+                        <results>
+                          <test-case name="SportsStore.UnitTests.HtmlHelpers.PagingHelpersTests.CanGeneratePageLinks" executed="True" result="Success" success="True" time="0.120" asserts="1" />
+                        </results>
+                      </test-suite>
                     </results>
                   </test-suite>
                 </results>

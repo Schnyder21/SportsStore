@@ -28,6 +28,28 @@ div#categories {
     float: left;
     width: 8em;
     padding: 0.3em;
+
+    a {
+        font: bold 1.1em "Arial Narrow", "Franklin Gothic Medium", Arial;
+        display: block;
+        text-decoration: none;
+        padding: 0.6em;
+        color: black;
+        border-bottom: 1px solid silver;
+
+        &:hover {
+            background-color: #CCC;
+        }
+    }
+
+    a.selected {
+        background-color: #666;
+        color: white;
+
+        &:hover {
+            background-color: #666;
+        }
+    }
 }
 
 div.item {

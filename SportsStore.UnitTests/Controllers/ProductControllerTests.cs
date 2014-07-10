@@ -21,7 +21,7 @@ namespace SportsStore.UnitTests.Controllers
                 { 
                     ProductID = i,
                     Name = "P" + i,
-                    Category = "Cat" + ((i % 3) + 1)
+                    Category = "Cat" + (((i-1) % 3) + 1)
                 }).AsQueryable();
         }
 
@@ -59,9 +59,9 @@ namespace SportsStore.UnitTests.Controllers
             var result = ((ProductsListViewModel)controller.List("Cat2", 1).Model).Products.ToArray();
 
             Assert.That(result.Length, Is.EqualTo(2));
-            Assert.That(result[0].Name, Is.EqualTo("P1"));
+            Assert.That(result[0].Name, Is.EqualTo("P2"));
             Assert.That(result[0].Category, Is.EqualTo("Cat2"));
-            Assert.That(result[1].Name, Is.EqualTo("P4"));
+            Assert.That(result[1].Name, Is.EqualTo("P5"));
             Assert.That(result[1].Category, Is.EqualTo("Cat2"));
         }
     }

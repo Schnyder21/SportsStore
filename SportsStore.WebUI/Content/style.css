@@ -6,6 +6,22 @@ form {
   margin: 0;
   padding: 0; }
 
+h2 {
+  margin-top: 0.3em; }
+
+tfoot td {
+  border-top: 1px dotted gray;
+  font-weight: bold; }
+
+.actionButtons a, input.actionButtons {
+  font: 0.8em Arial;
+  color: white;
+  margin: 0.5em;
+  text-decoration: none;
+  padding: 0.15em 1.5em 0.2em 1.5em;
+  background-color: #353535;
+  border: 1px solid black; }
+
 div#header {
   background-color: #444;
   border-bottom: 2px solid #111;

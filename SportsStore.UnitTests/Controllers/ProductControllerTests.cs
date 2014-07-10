@@ -73,10 +73,7 @@ namespace SportsStore.UnitTests.Controllers
 
             var controller = new ProductController(mock.Object);
             controller.PageSize = 3;
-            foreach (var p in this.products())
-            {
-                Console.WriteLine(p.Category);
-            }
+
             Assert.That(categoryCount(controller, "Cat1"), Is.EqualTo(2), "Should be 2 cat1 records");
             Assert.That(categoryCount(controller, "Cat2"), Is.EqualTo(2), "Should be 2 cat2 records");
             Assert.That(categoryCount(controller, "Cat3"), Is.EqualTo(1), "Should be 1 cat3 records");

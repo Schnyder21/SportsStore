@@ -2,6 +2,10 @@
   font-family: Cambria, Georgia, "Times New Roman";
   margin: 0; }
 
+form {
+  margin: 0;
+  padding: 0; }
+
 div#header {
   background-color: #444;
   border-bottom: 2px solid #111;
@@ -49,6 +53,13 @@ div.item {
   div.item:first-child {
     border-top: none;
     padding-top: 0; }
+  div.item form {
+    float: right; }
+  div.item input {
+    color: white;
+    background-color: #333;
+    border: 1px solid black;
+    cursor: pointer; }
 
 div.pager {
   text-align: right;

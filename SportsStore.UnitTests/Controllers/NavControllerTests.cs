@@ -31,5 +31,21 @@ namespace SportsStore.UnitTests.Controllers
 
             Assert.That(results, Is.EqualTo(new string[] { "Apples", "Oranges", "Plums" }));
         }
+
+        public void IndicatesSelectedCategory()
+        {
+            var mock = new Mock<IProductRepository>();
+            mock.Setup(m => m.Products).Returns(new Product[]{
+                new Product { ProductID = 1, Name = "P1", Category = "Apples" },
+                new Product { ProductID = 2, Name = "P2", Category = "Oranges" }
+            }.AsQueryable());
+
+            var controller = new NavController(mock.Object);
+
+            var category = "Apples";
+            string result = controller.Menu(category).ViewBag.SelectedCategory;
+
+            Assert.That(result, Is.EqualTo(category));
+        }
     }
 }

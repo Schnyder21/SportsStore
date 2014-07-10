@@ -64,5 +64,28 @@ namespace SportsStore.UnitTests.Controllers
             Assert.That(result[1].Name, Is.EqualTo("P5"));
             Assert.That(result[1].Category, Is.EqualTo("Cat2"));
         }
+
+        [Test]
+        public void GenerateCategorySpecificProductCount()
+        {
+            var mock = new Mock<IProductRepository>();
+            mock.Setup(p => p.Products).Returns(products());
+
+            var controller = new ProductController(mock.Object);
+            controller.PageSize = 3;
+            foreach (var p in this.products())
+            {
+                Console.WriteLine(p.Category);
+            }
+            Assert.That(categoryCount(controller, "Cat1"), Is.EqualTo(2), "Should be 2 cat1 records");
+            Assert.That(categoryCount(controller, "Cat2"), Is.EqualTo(2), "Should be 2 cat2 records");
+            Assert.That(categoryCount(controller, "Cat3"), Is.EqualTo(1), "Should be 1 cat3 records");
+            Assert.That(categoryCount(controller, null), Is.EqualTo(5), "should be 5 total records");
+        }
+
+        private int categoryCount(ProductController controller, string category)
+        {
+            return ((ProductsListViewModel)controller.List(category, 1).Model).PagingInfo.TotalItems;
+        }
     }
 }

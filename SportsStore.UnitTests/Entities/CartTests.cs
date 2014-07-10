@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SportsStore.Domain.Entities;
 using NUnit.Framework;
+using SportsStore.UnitTests.TestHelpers;
 
 namespace SportsStore.UnitTests.Entities
 {
@@ -13,11 +14,7 @@ namespace SportsStore.UnitTests.Entities
     {
         private Product[] generateProducts(int count = 2)
         {
-            return Enumerable.Range(1, count).Select(i =>
-                new Product{
-                    ProductID = i,
-                    Name = "P" + i
-                }).ToArray();
+            return ProductHelper.GenerateProducts(count).ToArray();
         }
 
         [Test]

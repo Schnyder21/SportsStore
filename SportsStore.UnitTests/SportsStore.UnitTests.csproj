@@ -80,11 +80,13 @@
     <Otherwise />
   </Choose>
   <ItemGroup>
+    <Compile Include="Controllers\CartControllerTests.cs" />
     <Compile Include="Controllers\NavControllerTests.cs" />
     <Compile Include="Entities\CartTests.cs" />
     <Compile Include="HtmlHelpers\PagingHelpersTests.cs" />
     <Compile Include="Controllers\ProductControllerTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TestHelpers\ProductHelper.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

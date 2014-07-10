@@ -135,3 +135,21 @@ div.pager {
         color: white;
     }
 }
+
+div#cart {
+    float:right;
+    margin: 0.8em;
+    color: silver;
+    background-color: #555;
+    padding: 0.5em 0.5em 0.5em 1em;
+
+    a {
+        text-decoration: none;
+        padding: 0.4em 1em 0.4em 1em;
+        line-height: 2.1em;
+        margin-left: 0.5em;
+        background-color: #333;
+        color: white;
+        border: 1px solid black;
+    }
+}

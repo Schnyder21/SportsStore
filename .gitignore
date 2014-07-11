@@ -1,6 +1,7 @@
 ###################
 # compiled source #
 ###################
+*.eml
 *.com
 *.class
 *.dll

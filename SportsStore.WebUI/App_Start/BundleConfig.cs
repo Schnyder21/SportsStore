@@ -17,6 +17,9 @@ namespace SportsStore.WebUI
             bundles.Add(new StyleBundle("~/bundles/style").Include(
                         "~/Content/style.css"));
 
+            bundles.Add(new StyleBundle("~/bundles/admin-style").Include(
+                "~/Content/admin.css"));
+
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862

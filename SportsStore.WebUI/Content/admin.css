@@ -17,7 +17,7 @@ table.grid {
   table.grid td, table.grid th {
     border-bottom: 1px dotted gray;
     text-align: left; }
-  table.grid th.numerical-col, table.grid td.numerical-col {
+  table.grid th.numeric-col, table.grid td.numeric-col {
     text-align: right;
     padding-right: 1em; }
 

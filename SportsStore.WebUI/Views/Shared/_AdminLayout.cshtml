@@ -8,7 +8,12 @@
 </head>
 <body>
     <div>
+        @if (TempData["message"] != null)
+        {
+            <div class="message">@TempData["message"]</div>
+        }
         @RenderBody()
     </div>
 </body>
+
 </html>

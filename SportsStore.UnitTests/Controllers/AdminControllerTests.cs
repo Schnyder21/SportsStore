@@ -9,6 +9,7 @@ using SportsStore.Domain.Abstract;
 using SportsStore.Domain.Entities;
 using SportsStore.UnitTests.TestHelpers;
 using SportsStore.WebUI.Controllers;
+using System.Web.Mvc;
 
 namespace SportsStore.UnitTests.Controllers
 {
@@ -57,6 +58,33 @@ namespace SportsStore.UnitTests.Controllers
             var result = controller.Edit(4).ViewData.Model as Product;
 
             Assert.That(result, Is.Null);
+        }
+
+        [Test]
+        public void EditActionWithValidChangesAreSaved()
+        {
+            var mock = new Mock<IProductRepository>();
+            var controller = new AdminController(mock.Object);
+            var product = new Product { Name = "Test" };
+
+            var result = controller.Edit(product);
+
+            mock.Verify(m => m.SaveProduct(product));
+            Assert.That(result, Is.Not.TypeOf<ViewResult>());
+        }
+
+        [Test]
+        public void EditActionWithInvalidChangesAreNotSaved()
+        {
+            var mock = new Mock<IProductRepository>();
+            var controller = new AdminController(mock.Object);
+            var product = new Product { Name = "Test" };
+            controller.ModelState.AddModelError("error", "error");
+
+            var result = controller.Edit(product);
+
+            mock.Verify(m => m.SaveProduct(It.IsAny<Product>()), Times.Never());
+            Assert.That(result, Is.TypeOf<ViewResult>());
         }
     }
 }

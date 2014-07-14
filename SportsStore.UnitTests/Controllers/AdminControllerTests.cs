@@ -86,5 +86,34 @@ namespace SportsStore.UnitTests.Controllers
             mock.Verify(m => m.SaveProduct(It.IsAny<Product>()), Times.Never());
             Assert.That(result, Is.TypeOf<ViewResult>());
         }
+
+        [Test]
+        public void DeleteActionWithValidProductCallsTheRepositoryDeleteMethod()
+        {
+            //Need to get a Queryable view over the same in memory list of Products
+            var products = ProductHelper.GenerateProducts(3).ToArray().AsQueryable();
+            var product = products.First();
+            var mock = new Mock<IProductRepository>();
+            mock.Setup(m => m.Products).Returns(products);
+            var controller = new AdminController(mock.Object);
+
+            Assert.That(product, Is.EqualTo(mock.Object.Products.FirstOrDefault(p => p.ProductID == product.ProductID)));
+
+            controller.Delete(product.ProductID);
+
+            mock.Verify(m => m.DeleteProduct(product));
+        }
+
+        [Test]
+        public void DeleteActionWithInvalidProductDoesNothing()
+        {
+            var mock = new Mock<IProductRepository>();
+            mock.Setup(m => m.Products).Returns(ProductHelper.GenerateProducts(3));
+            var controller = new AdminController(mock.Object);
+
+            controller.Delete(100);
+
+            mock.Verify(m => m.DeleteProduct(It.IsAny<Product>()), Times.Never());
+        }
     }
 }

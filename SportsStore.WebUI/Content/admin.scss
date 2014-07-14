@@ -62,3 +62,24 @@ div.message {
 .validation-summary-valid {
     display: none;
 }
+
+.editor-field {
+    margin-bottom: 0.8em;
+}
+
+.editor-label {
+    font-weight: bold;
+
+    &:after {
+        content: ":";
+    }
+}
+
+.text-box {
+    width: 25em;
+}
+
+.multi-line {
+    height: 5em;
+    font-family: 'Segoe UI', Verdana;
+}

@@ -67,7 +67,7 @@ namespace SportsStore.UnitTests.Controllers
             var controller = new AdminController(mock.Object);
             var product = new Product { Name = "Test" };
 
-            var result = controller.Edit(product);
+            var result = controller.Edit(product, null);
 
             mock.Verify(m => m.SaveProduct(product));
             Assert.That(result, Is.Not.TypeOf<ViewResult>());
@@ -81,7 +81,7 @@ namespace SportsStore.UnitTests.Controllers
             var product = new Product { Name = "Test" };
             controller.ModelState.AddModelError("error", "error");
 
-            var result = controller.Edit(product);
+            var result = controller.Edit(product, null);
 
             mock.Verify(m => m.SaveProduct(It.IsAny<Product>()), Times.Never());
             Assert.That(result, Is.TypeOf<ViewResult>());

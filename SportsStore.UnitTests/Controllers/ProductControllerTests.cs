@@ -8,6 +8,8 @@ using SportsStore.WebUI.Controllers;
 using System.Collections;
 using System.Collections.Generic;
 using SportsStore.WebUI.Models;
+using System.Web.Mvc;
+using SportsStore.UnitTests.TestHelpers;
 
 namespace SportsStore.UnitTests.Controllers
 {
@@ -78,6 +80,42 @@ namespace SportsStore.UnitTests.Controllers
             Assert.That(categoryCount(controller, "Cat2"), Is.EqualTo(2), "Should be 2 cat2 records");
             Assert.That(categoryCount(controller, "Cat3"), Is.EqualTo(1), "Should be 1 cat3 records");
             Assert.That(categoryCount(controller, null), Is.EqualTo(5), "should be 5 total records");
+        }
+
+        [Test]
+        public void RetrieveImageDataSetsDataAndMimeType()
+        {
+            var prod = new Product{
+                ProductID = 2,
+                Name = "Test",
+                ImageData = new byte[0],
+                ImageMimeType = "image/png"
+            };
+            var mock = new Mock<IProductRepository>();
+            mock.Setup(m => m.Products).Returns(new Product[] {
+                new Product{ProductID = 1, Name = "P1"},
+                prod,
+                new Product{ProductID = 2, Name="P2"}
+            }.AsQueryable());
+            var controller = new ProductController(mock.Object);
+
+            var result = controller.GetImage(2);
+
+            Assert.That(result, Is.Not.Null);
+            Assert.That(result, Is.TypeOf<FileContentResult>());
+            Assert.That((result as FileResult).ContentType, Is.EqualTo(prod.ImageMimeType));
+        }
+        
+        [Test]
+        public void DoesntRetrieveImnageDataForWrongProducts()
+        {
+            var mock = new Mock<IProductRepository>();
+            mock.Setup(m => m.Products).Returns(ProductHelper.GenerateProducts(3));
+            var controller = new ProductController(mock.Object);
+
+            var result = controller.GetImage(1000);
+
+            Assert.That(result, Is.Null);
         }
 
         private int categoryCount(ProductController controller, string category)

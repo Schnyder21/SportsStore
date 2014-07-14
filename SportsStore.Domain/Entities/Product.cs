@@ -10,15 +10,25 @@ namespace SportsStore.Domain.Entities
 {
     public class Product
     {
+        /*
+         * See ch 16 to move attributes to another class that MVC can find
+         */
+
         [HiddenInput(DisplayValue=false)]
         public int ProductID { get; set; }
 
+        [Required(ErrorMessage="Please enter a product name")]
         public string Name { get; set; }
 
+        [Required(ErrorMessage="Please enter a description")]
         [DataType(DataType.MultilineText)]
         public string Description { get; set; }
 
+        [Required]
+        [Range(0.01, double.MaxValue, ErrorMessage="Pleaes enter a positive price")]
         public decimal Price { get; set; }
+
+        [Required(ErrorMessage="Please specify a category")]
         public string Category { get; set; }
     }
 }

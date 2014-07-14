@@ -20,6 +20,11 @@ namespace SportsStore.WebUI
             bundles.Add(new StyleBundle("~/bundles/admin-style").Include(
                 "~/Content/admin.css"));
 
+            bundles.Add(new ScriptBundle("~/bundles/admin-scripts").Include(
+                "~/Scripts/jquery-2.1.1.js",
+                "~/Scripts/jquery.validate.js",
+                "~/Scripts/jquery.validate.unobtrusive.js"));
+
 
             // Set EnableOptimizations to false for debugging. For more information,
             // visit http://go.microsoft.com/fwlink/?LinkId=301862
